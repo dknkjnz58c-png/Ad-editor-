@@ -1,0 +1,27 @@
+{
+  "name": "ad-editor",
+  "version": "1.0.0",
+  "description": "Ad editor: yt-dlp downloads, FFmpeg cuts and mixes, HyperFrames adds captions and graphics",
+  "scripts": {
+    "download": "bash scripts/download.sh",
+    "cut": "bash scripts/cut.sh",
+    "preview": "cd ad && hyperframes preview",
+    "lint": "hyperframes lint ./ad",
+    "render": "cd ad && hyperframes render -o ../out/ad.mp4",
+    "mix": "bash scripts/mix.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dknkjnz58c-png/Ad-editor-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dknkjnz58c-png/Ad-editor-/issues"
+  },
+  "homepage": "https://github.com/dknkjnz58c-png/Ad-editor-#readme",
+  "dependencies": {
+    "hyperframes": "^0.9.81"
+  },
+  "private": true
+}

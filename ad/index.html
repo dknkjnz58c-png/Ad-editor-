@@ -1,0 +1,62 @@
+<!doctype html>
+<html
+  data-composition-variables='[
+    {"id":"headline","type":"string","label":"Headline","default":"The only 3 tools you need"},
+    {"id":"cta","type":"string","label":"Call to action","default":"Follow for more"},
+    {"id":"accent","type":"color","label":"Accent color","default":"#c9a24a"}
+  ]'
+>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; background: #000; }
+      #main { position: relative; overflow: hidden; background: #111; }
+      #bg-clip {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        object-fit: cover; z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="main"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="8"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Footage cut by scripts/cut.sh -->
+      <video
+        id="bg-clip"
+        class="clip"
+        src="assets/clip.mp4"
+        data-start="0"
+        data-duration="8"
+        data-track-index="0"
+        data-has-audio="true"
+        data-volume="1"
+        playsinline
+      ></video>
+
+      <!-- Headline, captions and CTA -->
+      <div
+        id="overlay"
+        data-composition-id="overlay"
+        data-composition-src="compositions/overlay.html"
+        data-start="0"
+        data-duration="8"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
