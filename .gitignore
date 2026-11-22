@@ -1,0 +1,6 @@
+node_modules/
+media/raw/*
+media/cut/*
+out/*
+!**/.gitkeep
+ad/assets/*.mp4
